@@ -6,8 +6,6 @@ import { prisma } from "../config/db.js";
 // Read The Token From Request
 // Check If Token is valid
 export const authMiddleware = async (req, res, next) => {
-    console.log("Auth Middleware Reached");
-
     let token;
 
     if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
@@ -24,7 +22,7 @@ export const authMiddleware = async (req, res, next) => {
         const user = await prisma.user.findUnique({
             where: { id: decoded.id },
         });
-
+        console.log("DEDED:", decoded, decoded.id);
         if (!user) {
             return res.status(401).json({ error: "User no longer exists!" });
         }
