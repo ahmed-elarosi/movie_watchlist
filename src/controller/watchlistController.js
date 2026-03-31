@@ -43,4 +43,14 @@ const addToWatchlist = async (req, res) => {
     });
 };
 
+const removeFromWatchlist = async (req, res) => {
+    const watchlistItem = await prisma.watchlistItem.findUnique({
+        where: { id: req.params.id },
+    });
+
+    if (!watchlistItem) {
+        return res.status(404).json({ error: "Watchlist item not found" });
+    }
+};
+
 export { addToWatchlist };
