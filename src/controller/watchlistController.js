@@ -46,9 +46,21 @@ const addToWatchlist = async (req, res) => {
 const updateWatchlistItem = async (req, res) => {
     const { status, rating, notes } = req.body;
 
+    // find the watchlist item and check ownership
     const watchlistItem = await prisma.watchlistItem.findUnique({
         where: { id: req.params.id },
     });
+
+    if (!watchlistItem) {
+        return res.status(404).json({ error: "Watchlist item not found" });
+    }
+
+    if (watchlistItem.userId !== req.user.id) {
+        return res.status(403).json({ error: "Not allowed to update this watchlist item" });
+    }
+
+    //build update date
+    const updateData = {};
 };
 
 const removeFromWatchlist = async (req, res) => {
