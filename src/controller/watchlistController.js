@@ -61,6 +61,21 @@ const updateWatchlistItem = async (req, res) => {
 
     //build update date
     const updateData = {};
+    if (status !== undefined) updateData.status = status.toUpperCase();
+    if (rating !== undefined) updateData.rating = rating;
+    if (notes !== undefined) updateData.notes = notes;
+
+    const updatedItem = await prisma.watchlistItem.update({
+        where: { id: req.params.id },
+        data: updateData,
+    });
+
+    res.status(200).json({
+        status: "success",
+        data: {
+            watchlistItem: updatedItem,
+        },
+    });
 };
 
 const removeFromWatchlist = async (req, res) => {
@@ -87,4 +102,4 @@ const removeFromWatchlist = async (req, res) => {
     });
 };
 
-export { addToWatchlist, removeFromWatchlist };
+export { addToWatchlist, removeFromWatchlist, updateWatchlistItem };
