@@ -17,7 +17,7 @@ Client → Routes → Controllers → Services → Database
 - **Routes** → Define API endpoints
 - **Controllers** → Handle request/response logic
 - **Services** → Business logic layer
-- **Models** → Database schema
+- **Prisma Client** → Database access layer
 - **Middleware** → Authentication, validation, error handling
 
 ---
