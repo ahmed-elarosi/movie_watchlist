@@ -21,3 +21,21 @@ Client → Routes → Controllers → Services → Database
 - **Middleware** → Authentication, validation, error handling
 
 ---
+
+movie_watchlist/
+│
+├── prisma/
+│ ├── schema.prisma # Prisma schema definition
+│ └── migrations/ # Database migrations
+│
+├── src/
+│ ├── controllers/ # Request handlers
+│ ├── routes/ # API routes
+│ ├── services/ # Business logic
+│ ├── middleware/ # Auth & error handling
+│ ├── config/ # App configuration
+│ └── app.js # Express app setup
+│
+├── .env # Environment variables
+├── package.json
+└── README.md
