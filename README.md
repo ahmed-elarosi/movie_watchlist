@@ -46,3 +46,13 @@ movie_watchlist/
 This project uses:
 - **Neon** → Serverless PostgreSQL database
 - **Prisma ORM** → Type-safe database client
+### Prisma Workflow
+
+1. Define models in `schema.prisma`
+2. Run migrations:
+   ```
+   npx prisma migrate dev
+3. Generate Prisma Client:
+    ```
+    npx prisma generate
+---
