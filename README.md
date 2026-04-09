@@ -117,3 +117,15 @@ Authentication is handled using **JWT (JSON Web Tokens)**.
 | POST   | /api/auth/login      | Login user         | ❌ No         |
 
 ---
+
+### 🎬 Movie Endpoints
+
+| Method | Endpoint           | Description                  | Auth Required |
+|--------|-------------------|------------------------------|---------------|
+| GET    | /api/movies       | Get user watchlist           | ✅ Yes        |
+| POST   | /api/movies       | Add new movie                | ✅ Yes        |
+| GET    | /api/movies/:id   | Get movie by ID              | ✅ Yes        |
+| PUT    | /api/movies/:id   | Update movie                 | ✅ Yes        |
+| DELETE | /api/movies/:id   | Delete movie                 | ✅ Yes        |
+
+---
