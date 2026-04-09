@@ -56,3 +56,34 @@ This project uses:
     ```
     npx prisma generate
 ---
+## 🧠 Data Models
+
+
+
+
+### User Model
+| Field      | Type     | Constraints              | Description                  |
+|-----------|----------|--------------------------|------------------------------|
+| id        | String   | Primary Key, UUID        | Unique user identifier       |
+| username  | String   | Required                 | User's display name          |
+| email     | String   | Unique, Required         | User's email address         |
+| password  | String   | Required                 | Hashed user password         |
+| movies    | Relation | One-to-Many (Movie[])    | User's movie watchlist       |
+| createdAt | DateTime | Default: now()           | Account creation timestamp   |
+
+---
+
+### Movie Model
+
+| Field        | Type     | Constraints                              | Description                    |
+|-------------|----------|------------------------------------------|--------------------------------|
+| id          | String   | Primary Key, UUID                        | Unique movie identifier        |
+| title       | String   | Required                                 | Movie title                    |
+| description | String   | Optional                                 | Movie description              |
+| releaseYear | Int      | Optional                                 | Year of release                |
+| genre       | String   | Optional                                 | Movie genre                    |
+| watched     | Boolean  | Default: false                           | Watch status                   |
+| userId      | String   | Foreign Key → User.id                    | Owner of the movie             |
+| user        | Relation | Many-to-One (User)                       | Associated user                |
+| createdAt   | DateTime | Default: now()                           | Record creation timestamp      |
+
