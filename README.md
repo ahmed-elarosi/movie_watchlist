@@ -106,3 +106,14 @@ Authentication is handled using **JWT (JSON Web Tokens)**.
 7. Access is granted to protected routes
 
 ---
+
+
+## 📡 API Endpoints
+### 🔑 Auth Endpoints
+
+| Method | Endpoint              | Description        | Auth Required |
+|--------|----------------------|--------------------|---------------|
+| POST   | /api/auth/register   | Register new user  | ❌ No         |
+| POST   | /api/auth/login      | Login user         | ❌ No         |
+
+---
