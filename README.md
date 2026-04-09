@@ -39,3 +39,7 @@ movie_watchlist/
 ├── .env # Environment variables
 ├── package.json
 └── README.md
+
+---
+
+## 🗄️ Database (Neon + Prisma)
