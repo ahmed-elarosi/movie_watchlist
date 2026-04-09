@@ -43,3 +43,6 @@ movie_watchlist/
 ---
 
 ## 🗄️ Database (Neon + Prisma)
+This project uses:
+- **Neon** → Serverless PostgreSQL database
+- **Prisma ORM** → Type-safe database client
