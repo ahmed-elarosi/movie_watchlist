@@ -87,3 +87,22 @@ This project uses:
 | user        | Relation | Many-to-One (User)                       | Associated user                |
 | createdAt   | DateTime | Default: now()                           | Record creation timestamp      |
 
+---
+
+## 🔐 Authentication
+
+Authentication is handled using **JWT (JSON Web Tokens)**.
+
+### 🔄 Authentication Flow
+1. User registers or logs in
+2. Server validates credentials
+3. Server generates a JWT token
+4. Client stores the token (cookies)
+5. Client sends the token in each request:
+
+   Authorization: Bearer <token>
+
+6. Server verifies the token via middleware
+7. Access is granted to protected routes
+
+---
